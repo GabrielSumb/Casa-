@@ -2,17 +2,22 @@
 
 :root {
     --cor-de-fundo: #1E1E1E;
-    --verde: #6FFF57;
+    --roxo: #4D229C;  /* Changed from --verde to --roxo */
     --branco: #FFFFFF;
     --botao-ativo: #3A375E;
     --botao-inativo: rgba(58, 55, 94, 0.5);
     --texto-fundo: rgba(58, 55, 94, 0.3);
+    --borda-ativa: 4px solid var(--roxo);  /* Updated to use --roxo */
 }
 
 body {
     background-color: var(--cor-de-fundo);
     color: var(--branco);
     font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 
@@ -33,7 +38,8 @@ body {
 }
 
 .titulo-principal span {
-    color: var(--verde);
+   color: var(--roxo);  /* Updated to use --roxo */
+    animation: pisca 1s infinite alternate;
 }
 
 
@@ -63,7 +69,8 @@ body {
 
 .botao.ativo {
     background-color: var(--botao-ativo);
-    border-bottom: 4px solid var(--verde);
+    border-bottom: var(--borda-ativa);  /* Now uses the purple border */
+    transform: scale(1.02);
 }
 
 .abas-textos {
@@ -87,9 +94,12 @@ body {
 
 .aba-conteudo-titulo-secundario {
     text-align: center;
-    color: var(--verde);
+    color: var(--roxo);  /* Updated to use --roxo */
     text-transform: uppercase;
+    font-size: clamp(14px, 2vw, 16px);
+    margin: 0;
 }
+
 
 .contador {
     display: flex;
@@ -110,10 +120,10 @@ body {
 }
 
 .contador-digito-texto {
-    color: var(--verde);
-    font-size: 20px;
+    color: var(--roxo);  /* Updated to use --roxo */
+    font-size: clamp(16px, 2vw, 20px);
     margin: 0;
-
+    font-weight: 400;
 }
 
 @media screen and (min-width: 768px) {
